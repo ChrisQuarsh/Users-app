@@ -26,7 +26,7 @@ render() {
           </div>
           <div className='col-md-8'>
                     <div className='App_user-info'>
-                      {this.state.users.map((item,index) => {
+                      {this.props.users.map((item,index) => {
                         return (
                           <UsersInfo
                             key={index}
