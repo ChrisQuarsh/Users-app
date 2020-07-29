@@ -1,32 +1,13 @@
-import React, {Component} from 'react';
 import './App.css';
+
+import React, {Component} from 'react';
+import { connect } from  'react-redux';
 import UsersForm from './components/UsersForm';
 import UsersInfo from './components/UsersInfo'; 
 import './css/bootstrap.min.css';
 
 export class App extends Component{
-constructor(props){
-  super(props);
-  this.state = {
-    users: [
-      {
-        name : 'Kojo Asamoah',
-        email : 'Kojo Asamoah@gmail.com',
-        gen: 3
-      },
-      {
-        name : 'Kojo Asamoah',
-        email : 'Kojo Asamoah@gmail.com',
-        gen: 3
-      },
-      {
-        name : 'Kojo Asamoah',
-        email : 'Kojo Asamoah@gmail.com',
-        gen: 3
-      },
-    ]   
-  }
-};
+
  
 
 addNewUser = (newUser) => { 
@@ -64,5 +45,9 @@ render() {
 }
 }
 
+const mapStateToProps = (state) => ({
+  users: state.users
+})
 
-export default App;
+
+export default connect(mapStateToProps)(App);
