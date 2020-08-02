@@ -16,7 +16,7 @@ const initialState = {
           gen: 3
         },
       ]
-}
+};
 
 const usersReducer = (state = initialState , action) => {
     switch (action.type) {

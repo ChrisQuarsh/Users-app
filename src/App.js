@@ -6,11 +6,9 @@ import UsersForm from './components/UsersForm';
 import UsersInfo from './components/UsersInfo'; 
 import './css/bootstrap.min.css';
 
-export class App extends Component{
+export class App extends Component { 
 
- 
-
-addNewUser = (newUser) => { 
+addNewUser = newUser => { 
 this.setState({
   users: [...this.state.users, newUser]
 });
@@ -26,7 +24,7 @@ render() {
           </div>
           <div className='col-md-8'>
                     <div className='App_user-info'>
-                      {this.props.users.map((item,index) => {
+                      {this.props.users.map((item, index) => {
                         return (
                           <UsersInfo
                             key={index}

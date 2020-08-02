@@ -8,10 +8,10 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import usersReducer from './store/usersReducer';
 
-const store = createStore(usersReducer,applyMiddleware(thunk));
+const store = createStore(usersReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
-<Provider store={store}>
+<Provider store={ store }>
     <App />
 </Provider>,
  document.getElementById('root')
