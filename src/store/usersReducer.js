@@ -4,20 +4,20 @@ const initialState = {
     users: [
         {
           id: '1',
-          name : 'Kojo Asamoah',
-          email : 'KojoAsamoah@gmail.com',
+          name : 'Thor SonofOden',
+          email : 'sonofoden@mail.com',
           gen: 3
         },
         {
           id: '2',
-          name : 'Kojo Asamoah',
-          email : 'KojoAsamoah@gmail.com',
+          name : 'Queeene Elizabeth',
+          email : 'queenie@mail.com',
           gen: 3
         },
         {
           id: '3',
-          name : 'Kojo Asamoah',
-          email : 'KojoAsamoah@gmail.com',
+          name : 'Peter Parker',
+          email : 'petepark@mail.com',
           gen: 3
         },
       ]
