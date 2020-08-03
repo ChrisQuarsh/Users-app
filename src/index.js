@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Router from './components/Router';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
@@ -12,7 +12,7 @@ const store = createStore(usersReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
 <Provider store={ store }>
-    <App />
+    <Router />
 </Provider>,
  document.getElementById('root')
  );

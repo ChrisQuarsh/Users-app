@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import '../css/UsersForm.css';
+import { connect } from 'react-redux';
+import { editUser } from '../store/usersActions';
 
-export class UsersForm extends Component {
+
+export class EditForm extends Component {
     constructor(props){
         super(props);
         this.state = {
-            name: '',
-            email: '',
-            gen: ''
-        };  
+            name: props.user.name,
+            email: props.user.email,
+            gen: props.user.gen
+        };
+        this.id = props.match.params.id  
     }
 
     handleChange = e => {
@@ -20,17 +24,18 @@ export class UsersForm extends Component {
 
       handleSubmit = e => {
         e.preventDefault();
-        const newUser = {
+        const updatedInfo = {
           name: this.state.name,
           email: this.state.email,
           gen: this.state.gen
         };
-      this.props.addUser(newUser)
+      this.props.editUser(this.id, updatedInfo)
       this.setState({ 
         name: '',
         email: '',
         gen:''
       });
+      this.props.history.push('/');
       };
 
     render() {
@@ -64,11 +69,19 @@ export class UsersForm extends Component {
           />
         </div>
         <div> 
-          <button className='add-button' type='submit'>Add user</button>
+          <button className='add-button' type='submit'>Update user</button>
         </div>
       </form>
         );
     }
 }
 
-export default UsersForm;
+const mapStateToProps = (state, ownProps) => ({
+  user: state.users.find(user => user.id === ownProps.match.params.id)
+})
+
+const mapDispatchToProps = {
+  editUser: editUser
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditForm);

@@ -11,10 +11,20 @@
 
   .contact{
     height: 150px;
-    width: 230px;
+    width: 260px;
     background-color: #173046;
     color: #fff;
     border-radius: 20px;
     padding: 10px 10px;
     margin-bottom: 10px;
+  }
+
+  .removeButton{
+    color: #173046;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .editLink{
+    color: #fff;
   }
