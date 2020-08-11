@@ -19,10 +19,13 @@ export const deleteUser = (user_id) => {
 };
 
 export const editUser = (user_id, updated_info) => {
-    return {
-        type: 'EDIT_USER',
-        user_id: user_id,
-        updated_info: updated_info
+    return (dispatch, state, { getFirestore }) => {
+        getFirestore()
+            .collection('users')
+            .doc(user_id)
+            .set(updated_info)
+            .then(() => {})
+            .catch((err) => {});
     };
 };
 
