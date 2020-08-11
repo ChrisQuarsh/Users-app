@@ -1,26 +1,7 @@
 import { v4 as uuid } from 'uuid';
 
 const initialState = {
-    users: [
-        {
-          id: '1',
-          name : 'Thor SonofOden',
-          email : 'sonofoden@mail.com',
-          gen: 3
-        },
-        {
-          id: '2',
-          name : 'Queeene Elizabeth',
-          email : 'queenie@mail.com',
-          gen: 3
-        },
-        {
-          id: '3',
-          name : 'Peter Parker',
-          email : 'petepark@mail.com',
-          gen: 3
-        },
-      ]
+    users: [],
 };
 
 const usersReducer = (state = initialState , action) => {
@@ -46,7 +27,9 @@ const usersReducer = (state = initialState , action) => {
                 return user;
               }
             });
-            return {...state, users: editedUsers}
+            return {...state, users: editedUsers};
+            case 'SET_ALL_USERS':
+              return { users:action.payload }; 
         default:
             return state;
     }

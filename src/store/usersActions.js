@@ -3,13 +3,7 @@ export const addUser = (user) => {
         getFirestore()
         .collection('users')
         .add(user)
-        .then((doc) => {
-           dispatch(
-            {
-                type: 'ADD_USER',
-                payload: user
-            }
-           )
+        .then((doc) => {       
         });
     }
 };
@@ -26,5 +20,23 @@ export const editUser = (user_id, updated_info) => {
         type: 'EDIT_USER',
         user_id: user_id,
         updated_info: updated_info
+    };
+};
+
+export const getAllUsers = () => {
+    return (dispatch, state, {getFirestore}) => {
+      getFirestore().collection('users').onSnapshot((snapshot) => {
+         let users = [];
+         snapshot.forEach((doc) => {
+             users.push(doc.data())
+         })
+          console.log(users);
+         dispatch({
+             type:'SET_ALL_USERS',
+             payload: users
+         })
+      },
+      (err) => {}
+      )  
     }
-} 
+}
