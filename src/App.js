@@ -17,7 +17,7 @@ deleteUser = user_id => {
   this.props.deleteUser(user_id);
 } 
 
-componentDidMount () {
+componentidMount () {
   this.props.getAllUsers();
 }
 

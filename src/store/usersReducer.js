@@ -9,8 +9,6 @@ const usersReducer = (state = initialState , action) => {
         case 'ADD_USER':
             const newUser = {
                 id: uuid(),
-
-
                 name: action.payload.name,
                 email: action.payload.email,
                 gen: action.payload.gen
