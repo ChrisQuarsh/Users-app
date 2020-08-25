@@ -1,5 +1,3 @@
-import { getFirestore } from "redux-firestore";
-
 export const addUser = (user) => {
   return (dispatch, state, { getFirestore }) => {
     getFirestore()
