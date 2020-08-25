@@ -1,30 +1,30 @@
-.contacts-list{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #2b4f6e;
-    border-radius: 20px;
-    padding: 10px 20px;
-    text-align: center;
-  }
+.contacts-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #2b4f6e;
+  border-radius: 20px;
+  padding: 10px 20px;
+  text-align: center;
+}
 
-  .contact{
-    height: 150px;
-    width: 260px;
-    background-color: #173046;
-    color: #fff;
-    border-radius: 20px;
-    padding: 10px 10px;
-    margin-bottom: 10px;
-  }
+.contact {
+  height: 150px;
+  width: 260px;
+  background-color: #173046;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+}
 
-  .removeButton{
-    color: #173046;
-    font-weight: bold;
-    margin-right: 10px;
-  }
+.removeButton {
+  color: #173046;
+  font-weight: bold;
+  margin-right: 10px;
+}
 
-  .editLink{
-    color: #fff;
-  }
+.editLink {
+  color: #fff;
+}
