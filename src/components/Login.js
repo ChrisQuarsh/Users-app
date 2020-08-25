@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { loginWithEmail, loginWithGoogle } from "../store/authActions";
+import "../loginpage.css";
 
 function Login(props) {
   if (!props.auth.isLoaded) return null;
@@ -14,23 +15,33 @@ function Login(props) {
   };
 
   return (
-    <div>
-      <h1>Login Now</h1>
+    <div className="fullpage">
+      <h1 className="text" style={{ fontSize: "4rem" }}>
+        Login Now
+      </h1>
 
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Email</label>
-          <input name="email" type="email" placeholder="email" />
+          <label
+            className="text"
+            style={{ marginRight: "50px", marginBottom: "50px" }}
+          >
+            Email :
+          </label>
+          <input name="email" type="email" placeholder="Email" />
         </div>
 
         <div>
-          <label>Password</label>
-          <input name="password" type="password" placeholder="password" />
+          <label className="text">Password :</label>
+          <input name="password" type="password" placeholder="  Password" />
         </div>
 
         <hr />
 
-        <button type="submit"> Login </button>
+        <button className="loginButton" type="submit">
+          {" "}
+          <b>Login</b>{" "}
+        </button>
 
         <hr />
 

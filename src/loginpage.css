@@ -1,0 +1,15 @@
+.fullpage {
+  text-align: center;
+}
+
+.text {
+  color: aliceblue;
+  font-size: x-large;
+  margin-right: 20px;
+}
+
+.loginButton {
+  border-radius: 10px;
+  padding: 10px;
+  font-size: larger;
+}
