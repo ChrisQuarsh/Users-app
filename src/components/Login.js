@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { loginWithEmail, loginWithGoogle } from "../store/authActions";
 import "../loginpage.css";
 
+import { Link } from "react-router-dom";
+
 function Login(props) {
   if (!props.auth.isLoaded) return null;
 
@@ -52,6 +54,11 @@ function Login(props) {
             alt="google button"
           />
         </button>
+
+        <p className="registerLink">
+          Do not have an account?
+          <Link to="/register">Register</Link>
+        </p>
       </form>
     </div>
   );
